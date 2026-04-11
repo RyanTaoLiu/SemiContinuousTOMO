@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Co-Optimization of Structure and Manufacturable Semi-Continuous Layers for Laminated Composites</title>
+  <style>
+    :root {
+      --bg: #f7f7f5;
+      --panel: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --soft: #f8fafc;
+      --shadow: 0 8px 30px rgba(15, 23, 42, 0.06);
+      --radius-lg: 28px;
+      --radius-md: 22px;
+      --radius-sm: 16px;
+      --maxw: 1100px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(var(--maxw), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .hero {
+      padding: 56px 0 24px;
+      text-align: center;
+    }
+
+    .pill {
+      display: inline-block;
+      padding: 8px 14px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: var(--panel);
+      color: var(--muted);
+      font-size: 14px;
+      box-shadow: var(--shadow);
+    }
+
+    .venue {
+      margin-top: 22px;
+      font-size: 13px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    h1 {
+      margin: 18px auto 0;
+      max-width: 980px;
+      font-size: clamp(32px, 5vw, 56px);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      font-weight: 700;
+    }
+
+    .authors {
+      margin: 24px auto 0;
+      max-width: 880px;
+      font-size: 18px;
+      color: #1e293b;
+    }
+
+    .affiliation {
+      margin-top: 12px;
+      font-size: 15px;
+      color: var(--muted);
+    }
+
+    .links {
+      margin-top: 28px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 18px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      font-size: 14px;
+      font-weight: 600;
+      transition: transform 0.15s ease, background 0.15s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+      background: #fcfcfd;
+    }
+
+    .button span {
+      color: #94a3b8;
+      font-weight: 500;
+    }
+
+    .section {
+      margin-top: 26px;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      border: 2px dashed #cbd5e1;
+      background: var(--soft);
+      color: #94a3b8;
+      border-radius: 24px;
+      min-height: 240px;
+      padding: 20px;
+    }
+
+    .teaser {
+      min-height: 380px;
+    }
+
+    .method {
+      min-height: 280px;
+    }
+
+    .video {
+      min-height: 360px;
+    }
+
+    h2 {
+      margin: 0;
+      text-align: center;
+      font-size: 32px;
+      line-height: 1.2;
+    }
+
+    .section p.lead {
+      max-width: 900px;
+      margin: 18px auto 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .body-text {
+      margin-top: 22px;
+      font-size: 15px;
+      color: #334155;
+    }
+
+    .caption {
+      margin-top: 14px;
+      text-align: center;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .result-card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .result-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      aspect-ratio: 4 / 3;
+      border: 2px dashed #cbd5e1;
+      background: var(--soft);
+      color: #94a3b8;
+      border-radius: 20px;
+      padding: 16px;
+      font-size: 14px;
+    }
+
+    .result-card h3 {
+      margin: 16px 0 8px;
+      font-size: 20px;
+    }
+
+    .result-card p {
+      margin: 0;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 18px;
+    }
+
+    pre {
+      margin: 18px 0 0;
+      padding: 18px;
+      overflow-x: auto;
+      background: var(--soft);
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      font-size: 14px;
+      color: #334155;
+      line-height: 1.6;
+    }
+
+    .contact p {
+      margin: 10px 0;
+      color: #334155;
+      font-size: 15px;
+    }
+
+    footer {
+      padding: 26px 0 48px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 900px) {
+      .grid-3,
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .card {
+        padding: 22px;
+      }
+
+      .teaser {
+        min-height: 260px;
+      }
+
+      .video {
+        min-height: 240px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <section class="hero">
+      <div class="pill">SIGGRAPH Project Page · Dummy</div>
+      <div class="venue">ACM Transactions on Graphics</div>
+      <h1>Co-Optimization of Structure and Manufacturable Semi-Continuous Layers for Laminated Composites</h1>
+      <div class="authors">
+        Author One*, Author Two*†, Author Three, Author Four, Author Five, Author Six, Author Seven‡
+      </div>
+      <div class="affiliation">
+        *Joint first authors · †Corresponding author · ‡Senior author<br />
+        University / Lab Name
+      </div>
+      <div class="links">
+        <a class="button" href="#">Paper <span>Coming soon</span></a>
+        <a class="button" href="#">Code <span>Coming soon</span></a>
+        <a class="button" href="#">Video <span>Coming soon</span></a>
+        <a class="button" href="#">Supplementary <span>Coming soon</span></a>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <div class="placeholder teaser">Teaser Figure Placeholder</div>
+        <div class="caption">
+          Add a teaser figure here. This is usually the main visual summary of the paper, showing the optimization pipeline and representative results.
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <h2>Abstract</h2>
+        <div class="body-text">
+          Laminated composites offer strong potential for lightweight structural design, but jointly optimizing structural topology and manufacturable semi-continuous layer organization remains challenging. This project page presents a placeholder for a framework that co-optimizes structure and manufacturable semi-continuous layers in a unified formulation. The final page can describe how geometric representation, structural performance, and fabrication-aware constraints are coupled within a differentiable optimization pipeline. Replace this paragraph with the final abstract from the paper once ready.
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <h2>Method Overview</h2>
+        <p class="lead">
+          Use this section for the main overview figure and a short explanation of the optimization variables, manufacturability constraints, and structural objectives.
+        </p>
+        <div class="placeholder method" style="margin-top: 24px;">Method Overview Figure Placeholder</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container" style="padding: 0; width: 100%;">
+        <div style="text-align: center; margin-bottom: 18px;">
+          <h2>Results</h2>
+          <p class="lead">
+            A SIGGRAPH-style project page usually shows several concise visual result blocks with short captions.
+          </p>
+        </div>
+        <div class="grid-3">
+          <div class="result-card">
+            <div class="result-box">Overview Figure</div>
+            <h3>Overview Figure</h3>
+            <p>Add a method overview showing co-optimization of structure, semi-continuous layers, and manufacturability constraints.</p>
+          </div>
+          <div class="result-card">
+            <div class="result-box">Result Gallery</div>
+            <h3>Result Gallery</h3>
+            <p>Add optimized laminated composite results, ablations, or comparisons against sequential baselines.</p>
+          </div>
+          <div class="result-card">
+            <div class="result-box">Fabrication / Validation</div>
+            <h3>Fabrication / Validation</h3>
+            <p>Add fabrication photos, sliced layer layouts, or mechanical validation examples.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <h2>Video</h2>
+        <div class="placeholder video" style="margin-top: 24px;">Video Embed Placeholder</div>
+        <div class="caption">Replace this block with an embedded YouTube iframe or MP4 video.</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="grid-2">
+        <div class="card">
+          <h2 style="text-align: left; font-size: 28px;">BibTeX</h2>
+          <pre>@article{yourkey2026cooptimization,
+  title   = {Co-Optimization of Structure and Manufacturable Semi-Continuous Layers for Laminated Composites},
+  author  = {Author One and Author Two and Author Three and Author Four and Author Five and Author Six and Author Seven},
+  journal = {ACM Transactions on Graphics},
+  year    = {2026}
+}</pre>
+        </div>
+        <div class="card contact">
+          <h2 style="text-align: left; font-size: 28px;">Contact</h2>
+          <p>Author One (author1@email.com)</p>
+          <p>Author Two (author2@email.com)</p>
+          <p>Author Seven (author7@email.com)</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      Replace the dummy content with your final paper assets, links, author list, and institutional information.
+    </footer>
+  </main>
+</body>
+</html>
