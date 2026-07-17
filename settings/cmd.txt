@@ -1,0 +1,1 @@
+--problem TipCantilever_30_20_20_midLoad --material PLAPlus --wSF 0 --wStress 1 --wSR 0 --desireVolumeFraction 0.25 --wHarmonic 0.1 --no-isotropic --numLayers 5 --numNeuronsPerLayer 50 --learningRate 0.001 --minLR 1e-5
