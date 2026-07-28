@@ -76,13 +76,8 @@ Will show the help documents for args.
 - **Boundary condition**, See [*'./settings/problems/testproblem.py'*](https://github.com/RyanTaoLiu/NeuralTOMO/blob/main/settings/problems/testProblem.py). 
 Based on the paper, **An efficient 3D topology optimization code written in Matlab**\[1\]. Add any new boundary condition as the new py file follow the *testproblem.py* and can be called by the arg *'--problem'*.
 
-- Voigt tensor order: ```[xx, yy, zz, yz, xz, xy]```
-
-- Two rotation matrix quasi-isotropy \[2\](https://doi.org/10.1007/s00158-023-03586-w) and anisotropy\[3\](https://doi.org/10.1007/s00158-019-02461-x), 
-
-- For stress only based optimization, a small `1e-3`regulartion weight should be used for **wSR**(rigid).
-
 - The result saved every 50 iterations, includes a '*.obj' file for the topology optimization marching cubes result(via diso lib), and '*.vtk’ file for the voxel-based density('density'), fiber direction ('fiber'), and local printing direction('lpd').
+
 ## Reference
 - [1] K. Liu and A. Tovar. **An efficient 3D topology optimization code written in Matlab**. *Structural and Multidisciplinary Optimization*, **50**(6):1175–1196, 2014. [https://doi.org/10.1007/s00158-014-1107-x](https://doi.org/10.1007/s00158-014-1107-x)  
 
