@@ -85,4 +85,4 @@ Based on the paper, **An efficient 3D topology optimization code written in Matl
 
 - [3] T. Liu, T. Zhang, Y. Chen, W. Wang, Y. Jiang, Y. Huang, and C.C.L. Wang. **Neural Co-Optimization of Structural Topology, Manufacturable Layers, and Path Orientations for Fiber-Reinforced Composites**. *ACM Transactions on Graphics*, **44**(4), Article 128, 17 pages, August 2025. [https://doi.org/10.1145/3730922](https://doi.org/10.1145/3730922)  
 
-- [4] T. Liu, A. Lyu, Y. Chen, Y. Jiang, M。 Petty, and C.C.L. Wang. **Co-Optimization of Structure and Manufacturable Semi-Continuous Layers for Laminated Composites**. *ACM Transactions on Graphics*, **44**(4), Article 128, 17 pages, July 2026. [https://dl.acm.org/doi/abs/10.1145/3811393](https://dl.acm.org/doi/abs/10.1145/3811393)  
+- [4] T. Liu, A. Lyu, Y. Chen, Y. Jiang, M。 Petty, and C.C.L. Wang. **Co-Optimization of Structure and Manufacturable Semi-Continuous Layers for Laminated Composites**. *ACM Transactions on Graphics*, **44**(4), Article 146, 17 pages, July 2026. [https://dl.acm.org/doi/abs/10.1145/3811393](https://dl.acm.org/doi/abs/10.1145/3811393)  
